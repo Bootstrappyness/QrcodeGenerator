@@ -1,0 +1,19 @@
+@RestController
+@RequestMapping("/api/qrcode")
+@CrossOrigin(origins = "*")
+public class QRCodeController {
+
+    @Autowired
+    private QRCodeService qrCodeService;
+
+    @PostMapping("/generate")
+    public ResponseEntity<byte[]> generateQRCode(@RequestBody String text) throws Exception {
+        byte[] image = qrCodeService.generateQRCodeImage(text, 300, 300);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_PNG);
+        headers.setContentLength(image.length);
+
+        return new ResponseEntity<>(image, headers, HttpStatus.OK);
+    }
+}
