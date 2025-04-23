@@ -1,5 +1,11 @@
 package com.rajesh.qrcode.qrcode_generator_service.utils;
 
+import com.google.zxing.*;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.*;
+
+import java.io.*;
+
 public class QRCodeGenerator {
 
     public static byte[] getQRCodeImage(String text, int width, int height) throws Exception {

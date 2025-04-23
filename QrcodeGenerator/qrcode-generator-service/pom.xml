@@ -61,7 +61,12 @@
         <artifactId>core</artifactId>
         <version>3.5.1</version>
     </dependency>
-    <dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+
+		<dependency>
         <groupId>com.google.zxing</groupId>
         <artifactId>javase</artifactId>
         <version>3.5.1</version>
